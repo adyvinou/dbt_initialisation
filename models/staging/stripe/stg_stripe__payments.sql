@@ -3,8 +3,8 @@
         orderid as  order_id,
         paymentmethod ,
         status ,
-        amount ,
+        amount / 100 as amount ,
         created ,
         _batched_at 
  
-    from raw.stripe.payment
+    from {{ source('stripe', 'payment') }}
