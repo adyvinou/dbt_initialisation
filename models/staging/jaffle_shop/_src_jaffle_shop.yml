@@ -1,18 +1,19 @@
 sources:
   - name: jaffle_shop
-    database: raw 
+    database: raw
     schema: jaffle_shop
     tables:
       - name: customers
         columns:
-          - name: id  
+          - name: id
+            description: primary key
             data_tests:
               - unique
-              - not_null
-
+              - not_null        
       - name: orders
         columns:
-          - name: id  
+          - name: id
+            description: primary key
             data_tests:
               - unique
-              - not_null
+              - not_null 
