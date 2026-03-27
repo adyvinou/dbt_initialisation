@@ -21,4 +21,10 @@ models:
                   - shipped
                   - returned
                   - placed
-                  - return_pending   
+                  - return_pending
+      - name: customer_id
+        data_tests:
+          - relationships:
+              arguments: 
+                to: ref('stg_jaffle_shop__customer')
+                field: customer_id
