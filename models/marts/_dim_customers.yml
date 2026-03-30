@@ -1,0 +1,21 @@
+models:
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        description: Id du client
+      - name: first_name
+        description: Le nom du client
+        data_tests:
+         - not_null
+      - name: last_name
+        description: Le prénom du client
+        data_tests:
+         - not_null        
+      - name: first_order_date
+        description: Date de la 1er commande
+      - name: most_recent_order_date
+        description:  RAS                              
+      - name: number_of_orders
+        description: Nombre de commande
+      - name: montant
+        description:  Montant de la commande
