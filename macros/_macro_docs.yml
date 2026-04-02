@@ -1,0 +1,10 @@
+macros:
+  - name: cents_to_dollars
+    description: convertir des cents en dollars  
+    arguments:
+      - name: colum_name
+        type: string 
+        description: la colonne que l'on souhaite convertir
+      - name: decimal
+        type: integer 
+        description: le nombre de décimal que l'on souahite avoir après la virgule        
