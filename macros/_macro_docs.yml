@@ -8,3 +8,12 @@ macros:
       - name: decimal
         type: integer 
         description: le nombre de décimal que l'on souahite avoir après la virgule        
+  - name: grant_select
+    description: donner les droits sur snoxflake au schéma et aux roles  
+    arguments:
+      - name: schéma
+        type: string 
+        description: le schéma de la table
+      - name: role
+        type: string 
+        description: le role de la table snowflake       
