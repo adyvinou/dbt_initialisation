@@ -10,6 +10,12 @@ orders as (
 
 ),
 
+employees as (
+
+    select * from {{ ref('employees') }}
+
+),
+
 payments as (
 
     select * from {{ ref('stg_stripe__payments') }}
@@ -37,7 +43,7 @@ customer_orders_payments as (
     select
         orders.customer_id,
         orders.order_id,
-        sum(payments.amount) as montant 
+        sum(payments.payment_amount) as montant 
 
     from orders
     left join payments using ( order_id)
@@ -54,13 +60,15 @@ final as (
         customer_orders.first_order_date,
         customer_orders.most_recent_order_date,
         coalesce(customer_orders.number_of_orders, 0) as number_of_orders,
-        customer_orders_payments.montant
+        customer_orders_payments.montant,
+        employees.employee_id
     from customers
 
     left join customer_orders using (customer_id)
-
+    left join employees using (customer_id) 
     left join customer_orders_payments using (customer_id)
 
 )
 
 select * from final
+    order by customer_id asc

@@ -1,9 +1,9 @@
 {{ union_tables_by_prefix(
 
-      database='raw',
-      schema='Analytics', 
-      prefix='orders__'
-        
-      )
+      database='Analytics',
+      schema='dbt_adyvinourayivire', 
+      prefix='int_orders_'
+       
+)
       
-  }}
+}}

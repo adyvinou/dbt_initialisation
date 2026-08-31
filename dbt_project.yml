@@ -38,6 +38,17 @@ models:
     # Applies to all files under models/example/
     staging:
       +materialized: view
+      #      +required_tests: {"unique.*|not_null"}
+#      required_tests:
+#        unique.*|not_null:
+#          severity: warn
 
     marts:
       +materialized: table
+#      +required_tests: {"relationship.*": true}
+#  dbt_adyvinourayivire:
+    audit:
+      +enabled: false
+    snowflake_spend:
+      +enabled: true
+
